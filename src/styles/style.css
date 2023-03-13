@@ -1,0 +1,20 @@
+body {
+  box-sizing: border-box;
+}
+
+.item .item-img {
+  width: 100px;
+  height: 100px;
+}
+
+.like-icon {
+  width: 10px;
+  height: 10px;
+}
+
+#items {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
