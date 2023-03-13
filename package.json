@@ -1,0 +1,20 @@
+{
+  "name": "capstone-project-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmineDerbal/capstone-project-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmineDerbal/capstone-project-2/issues"
+  },
+  "homepage": "https://github.com/AmineDerbal/capstone-project-2#readme"
+}
