@@ -1,0 +1,36 @@
+body {
+  box-sizing: border-box;
+}
+
+.item .item-img {
+  width: 200px;
+  height: 200px;
+}
+
+.item {
+  width: 200px;
+}
+
+.like-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.item-description {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.comment-button {
+  width: 100%;
+}
+
+#items {
+  margin: 0 auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+  justify-content: center;
+}
