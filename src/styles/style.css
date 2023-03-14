@@ -7,9 +7,23 @@ body {
   height: 200px;
 }
 
+.item {
+  width: 200px;
+}
+
 .like-icon {
   width: 30px;
   height: 30px;
+}
+
+.item-description {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.comment-button {
+  width: 100%;
 }
 
 #items {
