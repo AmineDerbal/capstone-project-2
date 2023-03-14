@@ -25,33 +25,33 @@ const displayPopup = (item) => {
           </div>
         </div>
       </div>`;
-  // modal.classList.remove("close");
-  // document.body.classList.add("hidescrollbar");
-  // modal.addEventListener("click", (e) => {
-  //   if (e.target.parentElement.classList.contains("close-btn")) {
-  //     modal.classList.add("close");
-  //     modal.innerHTML = "";
-  //     document.body.classList.remove("hidescrollbar");
-  //   }
-  // });
-  
-  const modalContent = document.querySelector(".modal-content");
-  const closeButton = document.querySelector(".close");
-  const openButton = document.querySelector("#open-button");
-
-  openButton.addEventListener("click", () => {
-    modal.style.display = "block";
-  });
-
-  closeButton.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  window.addEventListener("click", (event) => {
-    if (event.target === modalContent) {
-      modal.style.display = "none";
+  modal.classList.remove("close");
+  document.body.classList.add("hidescrollbar");
+  modal.addEventListener("click", (e) => {
+    if (e.target.parentElement.classList.contains("close-btn")) {
+      modal.classList.add("close");
+      modal.innerHTML = "";
+      document.body.classList.remove("hidescrollbar");
     }
   });
+  
+  // const modalContent = document.querySelector(".modal-content");
+  // const closeButton = document.querySelector(".close");
+  // const openButton = document.querySelector("#open-button");
+
+  // openButton.addEventListener("click", () => {
+  //   modal.style.display = "block";
+  // });
+
+  // closeButton.addEventListener("click", () => {
+  //   modal.style.display = "none";
+  // });
+
+  // window.addEventListener("click", (event) => {
+  //   if (event.target === modalContent) {
+  //     modal.style.display = "none";
+  //   }
+  // });
 
 }
 
