@@ -7,12 +7,12 @@ const displayPopup = (item) => {
         <div class="description">
           <h2 class="characters">Dog Characters</h2>
           <div class="text">
-            <p>Name: <span>Talia</span></p>
-            <p>Breed: <span>African giant</span></p>
-            <p>Weight: <span>15kg</span></p>
-            <p>Age: <span>12yrs</span></p>
-            <p>Size: <span>12-30cm</span></p>
-            <p>Temperament: <span>Stong</span></p>
+            <p>Name: <span>${item.breeds[0].name}</span></p>
+            <p>Bred for: <span>${item.breeds[0].bred_for}</span></p>
+            <p>Weight: <span>[${item.breeds[0].weight.metric}]</span></p>
+            <p>Life span: <span>${item.breeds[0].life_span}</span></p>
+            <p>Size: <span>[${item.breeds[0].height.metric}]</span></p>
+            <p>Temperament: <span>${item.breeds[0].temperament}</span></p>
           </div>
           <div class="comment">
             <h4>Add a Comment</h4>
@@ -25,34 +25,12 @@ const displayPopup = (item) => {
           </div>
         </div>
       </div>`;
-  modal.classList.remove("close");
-  document.body.classList.add("hidescrollbar");
-  modal.addEventListener("click", (e) => {
-    if (e.target.parentElement.classList.contains("close-btn")) {
-      modal.classList.add("close");
-      modal.innerHTML = "";
-      document.body.classList.remove("hidescrollbar");
-    }
+  document.body.appendChild(modal);
+
+  const closeBtn = document.querySelector('.close-btn');
+  closeBtn.addEventListener('click', () => {
+    modal.parentElement.remove(modal);
   });
-  
-  // const modalContent = document.querySelector(".modal-content");
-  // const closeButton = document.querySelector(".close");
-  // const openButton = document.querySelector("#open-button");
-
-  // openButton.addEventListener("click", () => {
-  //   modal.style.display = "block";
-  // });
-
-  // closeButton.addEventListener("click", () => {
-  //   modal.style.display = "none";
-  // });
-
-  // window.addEventListener("click", (event) => {
-  //   if (event.target === modalContent) {
-  //     modal.style.display = "none";
-  //   }
-  // });
-
-}
+};
 
 export default displayPopup;
