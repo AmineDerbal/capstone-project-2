@@ -3,18 +3,20 @@ body {
 }
 
 .item .item-img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 }
 
 .like-icon {
-  width: 10px;
-  height: 10px;
+  width: 30px;
+  height: 30px;
 }
 
 #items {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
   justify-content: center;
 }
