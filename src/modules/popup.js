@@ -1,6 +1,6 @@
 const displayPopup = (item) => {
-  const modal = document.createElement('div');
-  modal.id = 'modal';
+  const modal = document.createElement("div");
+  modal.id = "modal";
   modal.innerHTML = `<div class="modal-content">
         <span id='close-btn' class="close close-btn">&times;</span>
         <div ><img class="pop-image" src=${item.url} alt=${item.breeds[0].name}></div>
@@ -27,9 +27,9 @@ const displayPopup = (item) => {
       </div>`;
   document.body.appendChild(modal);
 
-  const closeBtn = document.querySelector('.close-btn');
-  closeBtn.addEventListener('click', () => {
-    modal.parentElement.remove(modal);
+  const closeBtn = document.querySelector(".close-btn");
+  closeBtn.addEventListener("click", () => {
+    modal.parentElement.removeChild(modal);
   });
 };
 
