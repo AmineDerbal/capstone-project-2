@@ -23,7 +23,7 @@ const displayPopup = async (item, index) => {
             <p>Temperament: <span>${item.breeds[0].temperament}</span></p>
           </div>
           <div class="commentcontainer">
-            <h3>Comments</h3>
+            <h3>Comments(<span id="comment-count">0</span>)</h3>
             <ul id="listcoment" class="listcoment"></ul>
             </div>
           <div class="d-comment">
@@ -45,6 +45,7 @@ const displayPopup = async (item, index) => {
     comments.forEach((comment) => {
       commentsList.appendChild(appendComment(comment));
     });
+    document.getElementById('comment-count').textContent = comments.length;
   }
 
   const closeBtn = document.querySelector('.close-btn');
@@ -57,12 +58,7 @@ const displayPopup = async (item, index) => {
     const nameInput = document.getElementById('name');
     const textInput = document.getElementById('text');
     if (nameInput !== '' && textInput !== '') {
-      const commentData = {
-        item_id: index,
-        username: nameInput.value,
-        comment: textInput.value,
-      };
-      await postApiComment(commentData);
+      await postApiComment(index, nameInput.value, textInput.value);
       const commentsList = document.getElementById('listcoment');
       commentsList.innerHTML = '';
       nameInput.value = '';
@@ -71,6 +67,7 @@ const displayPopup = async (item, index) => {
       comments.forEach((comment) => {
         commentsList.appendChild(appendComment(comment));
       });
+      document.getElementById('comment-count').textContent = comments.length;
     }
   });
 };
