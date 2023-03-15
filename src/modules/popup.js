@@ -1,4 +1,6 @@
-const displayPopup = (item) => {
+import getApiComments from "./api.js";
+
+const displayPopup = (item, index) => {
   const modal = document.createElement("div");
   modal.id = "modal";
   modal.innerHTML = `<div class="modal-content">
@@ -14,6 +16,10 @@ const displayPopup = (item) => {
             <p>Size: <span>[${item.breeds[0].height.metric}]</span></p>
             <p>Temperament: <span>${item.breeds[0].temperament}</span></p>
           </div>
+          <div class="commentcontainer">
+            <h3>Comments</h3>
+            <ul id="listcoment" class="listcoment"></ul>
+            </div>
           <div class="comment">
             <h4>Add a Comment</h4>
             <form action="https://formspree.io/f/mqkjggay" method="post" id="form">
@@ -26,6 +32,9 @@ const displayPopup = (item) => {
         </div>
       </div>`;
   document.body.appendChild(modal);
+  const commentsList = document.getElementById("listcoment");
+  const comments = getApiComments(index);
+  console.log(comments);
 
   const closeBtn = document.querySelector(".close-btn");
   closeBtn.addEventListener("click", () => {
