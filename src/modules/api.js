@@ -5,7 +5,8 @@ const involveId = 'SGBNwoFbgJ2ty7olqkAP';
 export const getApiItems = async () => {
   const dataStream = await fetch(baseUrl, {
     headers: {
-      'x-api-key': 'live_CcSfcJy9YCjnG2GgcCo196zIno3Kj7xVxdfu7lIGZGVZrdTQWqlE9UcCqX1JW7XY',
+      'x-api-key':
+        'live_CcSfcJy9YCjnG2GgcCo196zIno3Kj7xVxdfu7lIGZGVZrdTQWqlE9UcCqX1JW7XY',
     },
   });
   const dataResponse = await dataStream.json();
@@ -13,7 +14,9 @@ export const getApiItems = async () => {
 };
 
 export const getApiComments = async (index) => {
-  const dataStream = await fetch(`${involveUrl}${involveId}/comments?item_id=${index}`);
+  const dataStream = await fetch(
+    `${involveUrl}${involveId}/comments?item_id=${index}`,
+  );
   if (dataStream.status !== 200) {
     return [];
   }
@@ -41,5 +44,8 @@ export const sendALike = async (index) => {
 };
 
 export default {
-  getApiItems, sendALike, getAllLikesData, getApiComments,
+  getApiItems,
+  sendALike,
+  getAllLikesData,
+  getApiComments,
 };
