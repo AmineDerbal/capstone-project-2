@@ -1,12 +1,12 @@
 import { getApiComments, postApiComment } from './api.js';
 
-const appendComment = (commentItem) => {
+export const appendComment = (commentItem) => {
   const list = document.createElement('li');
   list.innerHTML = `<span class ="date">${commentItem.creation_date} </span> <span class="name">${commentItem.username} </span> <span class="comment">${commentItem.comment}</span>`;
   return list;
 };
 
-const displayPopup = async (item, index) => {
+export const displayPopup = async (item, index) => {
   const modal = document.createElement('div');
   modal.id = 'modal';
   modal.innerHTML = `<div class="modal-content">
@@ -72,4 +72,4 @@ const displayPopup = async (item, index) => {
   });
 };
 
-export default displayPopup;
+export default { displayPopup, appendComment };

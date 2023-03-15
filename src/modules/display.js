@@ -1,6 +1,6 @@
 import likeSrc from '../image/like-icon.png';
 import { getAllLikesData, sendALike } from './api.js';
-import displayPopup from './popup.js';
+import { displayPopup } from './popup.js';
 
 const sortLike = async () => {
   const data = await getAllLikesData();
