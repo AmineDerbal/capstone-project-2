@@ -136,11 +136,15 @@ h3 {
   background-color: rgb(219, 127, 255);
 }
 
-.comment {
+.listcoment li:nth-child(odd) {
+  background-color: aqua;
+}
+
+.d-comment {
   margin-top: 20px;
 }
 
-.comment h4 {
+.d-comment h4 {
   margin-top: 0;
   margin-bottom: 10px;
   font-size: 2rem;
