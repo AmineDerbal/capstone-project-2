@@ -17,7 +17,7 @@ export const getApiItems = async () => {
   return dataResponse;
 };
 
-export const postApiComment = async ({ id, username, comment }) => {
+export const postApiComment = async (id, username, comment) => {
   const dataStream = await fetch(`${involveUrl}${involveId}/comments/`, {
     method: 'POST',
     headers: {
