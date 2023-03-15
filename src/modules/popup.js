@@ -1,4 +1,4 @@
-import { getApiComments } from './api.js';
+import { getApiComments, postApiComment } from './api.js';
 
 const appendComment = (commentItem) => {
   const list = document.createElement('li');
@@ -50,6 +50,28 @@ const displayPopup = async (item, index) => {
   const closeBtn = document.querySelector('.close-btn');
   closeBtn.addEventListener('click', () => {
     modal.parentElement.removeChild(modal);
+  });
+  const commentForm = document.querySelector('.add-comment');
+  commentForm.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const nameInput = document.getElementById('name');
+    const textInput = document.getElementById('text');
+    if (nameInput !== '' && textInput !== '') {
+      const commentData = {
+        item_id: index,
+        username: nameInput.value,
+        comment: textInput.value,
+      };
+      await postApiComment(commentData);
+      const commentsList = document.getElementById('listcoment');
+      commentsList.innerHTML = '';
+      nameInput.value = '';
+      textInput.value = '';
+      const comments = await getApiComments(index);
+      comments.forEach((comment) => {
+        commentsList.appendChild(appendComment(comment));
+      });
+    }
   });
 };
 
