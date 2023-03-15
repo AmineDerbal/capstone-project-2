@@ -1,5 +1,6 @@
 import likeSrc from '../image/like-icon.png';
 import { getAllLikesData } from './api.js';
+import { getAllLikesData, sendALike } from './api.js';
 import displayPopup from './popup.js';
 
 const sortLike = async () => {
@@ -24,6 +25,14 @@ const displayItems = async (itemslist) => {
     const commentButton = document.querySelector(`.item[data-index="${index}"] .comment-button`);
     commentButton.addEventListener('click', () => {
       displayPopup(item, index);
+      displayPopup(item);
+    });
+    const likeButton = document.querySelector(`.item[data-index="${index}"] .like-icon`);
+    likeButton.addEventListener('click', async () => {
+      await sendALike(index);
+      const data = await getAllLikesData();
+      const itemIndex = await data.filter((item) => item.item_id === index);
+      getNumberOfLikes(itemIndex[0]);
     });
   });
   const numberofLikesData = await sortLike();

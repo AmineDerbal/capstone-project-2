@@ -7,6 +7,7 @@ const appendComment = (commentItem) => {
 };
 
 const displayPopup = async (item, index) => {
+const displayPopup = (item) => {
   const modal = document.createElement('div');
   modal.id = 'modal';
   modal.innerHTML = `<div class="modal-content">
