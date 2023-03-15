@@ -5,9 +5,21 @@ const involveId = 'SGBNwoFbgJ2ty7olqkAP';
 export const getApiItems = async () => {
   const dataStream = await fetch(baseUrl, {
     headers: {
-      'x-api-key': 'live_CcSfcJy9YCjnG2GgcCo196zIno3Kj7xVxdfu7lIGZGVZrdTQWqlE9UcCqX1JW7XY',
+      'x-api-key':
+        'live_CcSfcJy9YCjnG2GgcCo196zIno3Kj7xVxdfu7lIGZGVZrdTQWqlE9UcCqX1JW7XY',
     },
   });
+  const dataResponse = await dataStream.json();
+  return dataResponse;
+};
+
+export const getApiComments = async (index) => {
+  const dataStream = await fetch(
+    `${involveUrl}${involveId}/comments?item_id=${index}`,
+  );
+  if (dataStream.status !== 200) {
+    return [];
+  }
   const dataResponse = await dataStream.json();
   return dataResponse;
 };
@@ -31,4 +43,9 @@ export const sendALike = async (index) => {
   return dataStream;
 };
 
-export default { getApiItems, sendALike, getAllLikesData };
+export default {
+  getApiItems,
+  sendALike,
+  getAllLikesData,
+  getApiComments,
+};
