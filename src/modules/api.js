@@ -1,15 +1,19 @@
+import axios from 'axios';
+
 const baseUrl = 'https://api.thedogapi.com/v1/images/search?format=json&order=ASC&limit=10';
 const involveUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
 const involveId = 'SGBNwoFbgJ2ty7olqkAP';
 
 export const getApiItems = async () => {
-  const dataStream = await fetch(baseUrl, {
+  const config = {
     headers: {
       'x-api-key':
         'live_CcSfcJy9YCjnG2GgcCo196zIno3Kj7xVxdfu7lIGZGVZrdTQWqlE9UcCqX1JW7XY',
     },
-  });
-  const dataResponse = await dataStream.json();
+  };
+
+  const dataStream = await axios(baseUrl, config);
+  const dataResponse = dataStream.data;
   return dataResponse;
 };
 
