@@ -72,9 +72,6 @@ const displayPopup = async (item, index) => {
         commentsList.appendChild(appendComment(comment));
       });
     }
-
-    // const newComment = await postApiComment(index, commentData);
-    // commentsList.appendChild(appendComment(newComment));
   });
 };
 
