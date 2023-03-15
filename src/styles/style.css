@@ -104,6 +104,38 @@ body {
   font-weight: bold;
 }
 
+.commentcontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-top: 15px;
+}
+
+.listcoment {
+  border: 5px solid #ccc;
+  background-color: #6d082f;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 8px 5px 8px 8px #888;
+  overflow-y: scroll;
+  max-height: 560px;
+  width: 50%;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.listcoment li {
+  list-style: none;
+  padding: 10px;
+}
+
+.listcoment li:nth-child(even) {
+  background-color: rgb(219, 127, 255);
+}
+
 .comment {
   margin-top: 20px;
 }
