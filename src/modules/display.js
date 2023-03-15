@@ -10,7 +10,7 @@ const sortLike = async () => {
 const getNumberOfLikes = (item) => {
   if (document.querySelector(`.item[data-index="${item.item_id}"]`)) {
     document.querySelector(
-      `.item[data-index="${item.item_id}"] .number-likes`
+      `.item[data-index="${item.item_id}"] .number-likes`,
     ).textContent = item.likes;
   }
 };
@@ -24,13 +24,13 @@ const displayItems = async (itemslist) => {
     itemElement.innerHTML = `<img class="item-img" src=${item.url} alt=${item.breeds[0].name} /> <div class="item-description"><p>${item.breeds[0].name}</p><div><img class="like-icon" src=${likeSrc} alt="like" /> <p> <span class ="number-likes" >0</span> likes </p></div> </div><button class="comment-button">comment</button>`;
     itemsContainer.appendChild(itemElement);
     const commentButton = document.querySelector(
-      `.item[data-index="${index}"] .comment-button`
+      `.item[data-index="${index}"] .comment-button`,
     );
     commentButton.addEventListener('click', () => {
       displayPopup(item, index);
     });
     const likeButton = document.querySelector(
-      `.item[data-index="${index}"] .like-icon`
+      `.item[data-index="${index}"] .like-icon`,
     );
     likeButton.addEventListener('click', async () => {
       await sendALike(index);

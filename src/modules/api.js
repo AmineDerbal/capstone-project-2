@@ -1,9 +1,7 @@
 import axios from 'axios';
 
-const baseUrl =
-  'https://api.thedogapi.com/v1/images/search?format=json&order=ASC&limit=10';
-const involveUrl =
-  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
+const baseUrl = 'https://api.thedogapi.com/v1/images/search?format=json&order=ASC&limit=10';
+const involveUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
 const involveId = 'SGBNwoFbgJ2ty7olqkAP';
 
 export const getApiItems = async () => {
@@ -36,7 +34,7 @@ export const postApiComment = async (id, username, comment) => {
 
 export const getApiComments = async (index) => {
   const dataStream = await fetch(
-    `${involveUrl}${involveId}/comments?item_id=${index}`
+    `${involveUrl}${involveId}/comments?item_id=${index}`,
   );
   if (dataStream.status !== 200) {
     return [];
