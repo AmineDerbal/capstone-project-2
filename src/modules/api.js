@@ -1,7 +1,5 @@
-const baseUrl =
-  'https://api.thedogapi.com/v1/images/search?format=json&order=ASC&limit=10';
-const involveUrl =
-  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
+const baseUrl = 'https://api.thedogapi.com/v1/images/search?format=json&order=ASC&limit=10';
+const involveUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
 const involveId = 'SGBNwoFbgJ2ty7olqkAP';
 
 export const getApiItems = async () => {
@@ -15,17 +13,14 @@ export const getApiItems = async () => {
   return dataResponse;
 };
 
-export const postApiComment = async ({ item_id, username, comment }) => {
-  console.log('id', item_id);
-  console.log('name,', username);
-  console.log('comment', comment);
+export const postApiComment = async ({ id, username, comment }) => {
   const dataStream = await fetch(`${involveUrl}${involveId}/comments/`, {
     method: 'POST',
     headers: {
       'content-Type': 'application/json; charset=UTF-8',
     },
     body: JSON.stringify({
-      item_id,
+      item_id: id,
       username,
       comment,
     }),
@@ -35,7 +30,7 @@ export const postApiComment = async ({ item_id, username, comment }) => {
 
 export const getApiComments = async (index) => {
   const dataStream = await fetch(
-    `${involveUrl}${involveId}/comments?item_id=${index}`
+    `${involveUrl}${involveId}/comments?item_id=${index}`,
   );
   if (dataStream.status !== 200) {
     return [];
