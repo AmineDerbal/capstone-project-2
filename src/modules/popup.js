@@ -7,7 +7,6 @@ const appendComment = (commentItem) => {
 };
 
 const displayPopup = async (item, index) => {
-const displayPopup = (item) => {
   const modal = document.createElement('div');
   modal.id = 'modal';
   modal.innerHTML = `<div class="modal-content">
@@ -41,6 +40,7 @@ const displayPopup = (item) => {
   document.body.appendChild(modal);
   const commentsList = document.getElementById('listcoment');
   const comments = await getApiComments(index);
+
   if (comments.length !== 0) {
     comments.forEach((comment) => {
       commentsList.appendChild(appendComment(comment));
