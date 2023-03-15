@@ -20,8 +20,8 @@ const displayPopup = (item, index) => {
             <h3>Comments</h3>
             <ul id="listcoment" class="listcoment"></ul>
             </div>
-          <div class="comment">
-            <h4>Add a Comment</h4>
+          <div class="d-comment">
+            <h4>Add a d-Comment</h4>
             <form action="https://formspree.io/f/mqkjggay" method="post" id="form">
               <label for="name"></label>
               <input type="text" id="name" name="name" maxlength="30" placeholder="Name" required/>
