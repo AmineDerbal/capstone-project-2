@@ -18,29 +18,24 @@ export const getApiItems = async () => {
 };
 
 export const postApiComment = async (id, username, comment) => {
-  const dataStream = await fetch(`${involveUrl}${involveId}/comments/`, {
-    method: 'POST',
-    headers: {
-      'content-Type': 'application/json; charset=UTF-8',
-    },
-    body: JSON.stringify({
-      item_id: id,
-      username,
-      comment,
-    }),
+  const dataStream = await axios.post(`${involveUrl}${involveId}/comments/`, {
+    item_id: id,
+    username,
+    comment,
   });
   return dataStream;
 };
 
 export const getApiComments = async (index) => {
-  const dataStream = await fetch(
-    `${involveUrl}${involveId}/comments?item_id=${index}`,
-  );
-  if (dataStream.status !== 200) {
+  try {
+    const dataStream = await axios(
+      `${involveUrl}${involveId}/comments?item_id=${index}`,
+    );
+    const dataResponse = await dataStream.data;
+    return dataResponse;
+  } catch {
     return [];
   }
-  const dataResponse = await dataStream.json();
-  return dataResponse;
 };
 
 export const getAllLikesData = async () => {
