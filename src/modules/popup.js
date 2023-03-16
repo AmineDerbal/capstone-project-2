@@ -36,6 +36,15 @@ export const displayPopup = async (item, index) => {
         </div>
       </div>`;
   document.body.appendChild(modal);
+  document.body.classList.add('toggle-overflow');
+  modal.addEventListener('click', () => {
+    modal.parentElement.removeChild(modal);
+    document.body.classList.remove('toggle-overflow');
+  });
+  const modalContent = document.querySelector('.modal-content');
+  modalContent.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
   const commentsList = document.getElementById('listcoment');
   const comments = await getApiComments(index);
 
@@ -49,6 +58,7 @@ export const displayPopup = async (item, index) => {
   const closeBtn = document.querySelector('.close-btn');
   closeBtn.addEventListener('click', () => {
     modal.parentElement.removeChild(modal);
+    document.body.classList.remove('toggle-overflow');
   });
   const commentForm = document.querySelector('.add-comment');
   commentForm.addEventListener('click', async (e) => {
