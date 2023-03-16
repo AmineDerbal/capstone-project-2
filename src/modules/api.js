@@ -1,4 +1,5 @@
 import axios from 'axios';
+import apiKey from './apiKey.js';
 
 const baseUrl = 'https://api.thedogapi.com/v1/images/search?format=json&order=ASC&limit=10';
 const involveUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
@@ -7,7 +8,7 @@ const involveId = 'NYbrnTFajxbl4zz7fMTd';
 export const getApiItems = async () => {
   const config = {
     headers: {
-      'x-api-key': 'live_CcSfcJy9YCjnG2GgcCo196zIno3Kj7xVxdfu7lIGZGVZrdTQWqlE9UcCqX1JW7XY',
+      'x-api-key': apiKey,
     },
   };
 
