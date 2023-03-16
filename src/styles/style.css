@@ -1,20 +1,59 @@
 body {
   box-sizing: border-box;
+  min-height: 100vh;
+  background: #457b9d;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+#logo img {
+  width: 100px;
+  height: 100px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#item-counters {
+  margin-right: 1rem;
+}
+
+.introduction-title {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-overflow {
+  overflow: hidden;
 }
 
 .item .item-img {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
 }
 
 .item {
-  width: 200px;
+  width: auto;
+  margin: 0 auto;
+  padding: 1rem;
+  border: solid #fff 1px;
+  border-radius: 5px;
 }
 
 .like-icon {
   width: 30px;
   height: 30px;
   cursor: pointer;
+}
+
+.like-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .item-description {
@@ -25,11 +64,18 @@ body {
 
 .comment-button {
   width: 100%;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 #items {
-  margin: 0 auto;
-  width: 80%;
+  min-height: 75vh;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
@@ -203,6 +249,18 @@ textarea {
   width: 30%;
 }
 
-.add-comment:hover {
+.add-comment:hover,
+.comment-button:hover {
   background-color: #1d5f1f;
+}
+
+footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-top: 1rem;
+}
+footer p {
+  text-align: center;
 }
