@@ -65,7 +65,7 @@ export const displayPopup = async (item, index) => {
     e.preventDefault();
     const nameInput = document.getElementById('name');
     const textInput = document.getElementById('text');
-    if (nameInput !== '' && textInput !== '') {
+    if (nameInput.value !== '' && textInput.value !== '') {
       await postApiComment(index, nameInput.value, textInput.value);
       const commentsList = document.getElementById('listcoment');
       commentsList.innerHTML = '';
