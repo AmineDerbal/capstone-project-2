@@ -25,6 +25,7 @@
   - [Install](#install)
   - [Run tests](#run-tests)
 - [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -112,9 +113,9 @@ git clone https://github.com/AmineDerbal/capstone-project-2.git
 
 Install the dependencies with the command line :
 
-1.npm install => to install all the dependencies used in the project.
-2.npm run build => to build this project from the source folder using webpack.
-3.npm run start => in order to start a server and deploy the project localy
+1.npm install => to install all the dependencies used in the project. 2. suscribe to the [dog Api webSite](https://thedogapi.com/) and get your API key 3. in the apiKey.js file inside src/modules folder assign you API KEY value to the apiKey variable  
+4.npm run build => to build this project from the source folder using webpack.
+5.npm run start => in order to start a server and deploy the project localy
 
 ### Run tests
 
@@ -137,6 +138,14 @@ To run tests, run the following command:
 
 - GitHub: [github](https://github.com/QueenterJuma)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/queenter-juma-54a0b1222/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **responsive for all devices**
+- [ ] **implement additional home pages, one page per category of items**
+- [ ] **implement a front end framework**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
