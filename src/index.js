@@ -1,4 +1,5 @@
 import './styles/style.css';
+import 'animate.css';
 
 import { getApiItems } from './modules/api.js';
 import displayItems from './modules/display.js';
