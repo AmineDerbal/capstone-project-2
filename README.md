@@ -71,7 +71,7 @@
 
 ## 📺 Presentation <a name="presentation"></a>
 
-- [ScreenRec Presentation](https://screenrec.com/share/F9vUMaPVre)
+- [Zoom Presentation](https://drive.google.com/file/d/1CL7QK8lVnpCHuU7VGTmyN7DcTaMBWcwP/view)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
