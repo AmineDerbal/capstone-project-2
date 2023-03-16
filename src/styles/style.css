@@ -16,6 +16,10 @@ body {
   font-family: var(--overpass-font);
 }
 
+footer img {
+  width: 25px;
+}
+
 #logo img {
   width: 100px;
   height: 100px;
@@ -116,7 +120,6 @@ header {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-
   color: aliceblue;
 }
 
@@ -156,6 +159,12 @@ header {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
   justify-content: center;
+}
+
+footer p {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 1.5rem;
 }
 
 .text p {
@@ -273,15 +282,6 @@ footer {
   bottom: 0;
   width: 100%;
   padding-top: 1rem;
-}
-footer p {
-  text-align: center;
-  padding: 2rem 0;
-  font-size: 1.5rem;
-}
-
-footer img {
-  width: 25px;
 }
 
 .rotate-icon {
