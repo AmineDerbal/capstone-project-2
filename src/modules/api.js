@@ -2,13 +2,12 @@ import axios from 'axios';
 
 const baseUrl = 'https://api.thedogapi.com/v1/images/search?format=json&order=ASC&limit=10';
 const involveUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
-const involveId = 'SGBNwoFbgJ2ty7olqkAP';
+const involveId = 'F5PKxYqaZhVRrlHb7xQz';
 
 export const getApiItems = async () => {
   const config = {
     headers: {
-      'x-api-key':
-        'live_CcSfcJy9YCjnG2GgcCo196zIno3Kj7xVxdfu7lIGZGVZrdTQWqlE9UcCqX1JW7XY',
+      'x-api-key': 'live_CcSfcJy9YCjnG2GgcCo196zIno3Kj7xVxdfu7lIGZGVZrdTQWqlE9UcCqX1JW7XY',
     },
   };
 
@@ -28,9 +27,7 @@ export const postApiComment = async (id, username, comment) => {
 
 export const getApiComments = async (index) => {
   try {
-    const dataStream = await axios(
-      `${involveUrl}${involveId}/comments?item_id=${index}`,
-    );
+    const dataStream = await axios(`${involveUrl}${involveId}/comments?item_id=${index}`);
     const dataResponse = await dataStream.data;
     return dataResponse;
   } catch {
