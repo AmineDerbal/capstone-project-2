@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel:wght@600&family=Overpass&family=Patua+One&display=swap');
+
+:root {
+  --patua-font: 'Patua One', cursive;
+  --martel-font: 'Martel', serif;
+  --overpass-font: 'Overpass', sans-serif;
+}
+
 body {
   box-sizing: border-box;
   min-height: 100vh;
@@ -5,11 +13,16 @@ body {
   color: #fff;
   padding: 0;
   margin: 0;
+  font-family: var(--overpass-font);
 }
 
 #logo img {
   width: 100px;
   height: 100px;
+}
+
+h1 {
+  font-family: var(--patua-font);
 }
 
 header {
@@ -99,21 +112,19 @@ header {
 
 .modal-content {
   background-color: #8709ee;
-  margin: 5% auto;
+  margin: 0 auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  max-width: 600px;
-  position: relative;
+
   color: aliceblue;
 }
 
 .close {
-  color: #3d3535;
+  color: #fff;
   float: right;
-  font-size: 28px;
+  font-size: 3rem;
   font-weight: bold;
-  background-color: #ccc;
 }
 
 .close:hover,
@@ -125,8 +136,8 @@ header {
 
 /* Image */
 .pop-image {
-  width: 100%;
-  max-width: 300px;
+  width: 200px;
+  height: 200px;
   display: block;
   margin: 0 auto;
 }
@@ -140,10 +151,10 @@ header {
 
 .text {
   margin: 0 auto;
-  width: 80%;
+  width: 85%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  grid-gap: 10px;
   justify-content: center;
 }
 
@@ -164,6 +175,7 @@ header {
 }
 
 .listcoment {
+  margin: 0 auto;
   border: 5px solid #ccc;
   background-color: #6d082f;
   padding: 15px;
@@ -180,6 +192,7 @@ h4 {
   font-weight: bold;
   font-size: 2.5rem;
   text-align: center;
+  font-family: var(--martel-font);
 }
 
 h3 {
@@ -265,4 +278,16 @@ footer p {
   text-align: center;
   padding: 2rem 0;
   font-size: 1.5rem;
+}
+
+footer img {
+  width: 25px;
+}
+
+.rotate-icon {
+  transition: transform 0.3s ease-out;
+}
+
+.rotate-link:hover .rotate-icon {
+  transform: rotate(360deg);
 }
