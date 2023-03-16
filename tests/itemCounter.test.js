@@ -3,6 +3,7 @@
  */
 
 import { getApiItems } from '../src/modules/api.js';
+import getItemsCount from '../src/modules/itemCounter.js';
 
 const body = '<div id="items"></div>';
 
@@ -18,6 +19,7 @@ describe('test item counter', () => {
       item.className = 'item';
       lists.appendChild(item);
     });
-    expect(document.querySelectorAll('.item').length).toBe(10);
+
+    expect(getItemsCount()).toBe(10);
   });
 });
