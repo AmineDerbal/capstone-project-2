@@ -2,7 +2,7 @@ import { getApiComments, postApiComment } from './api.js';
 
 export const appendComment = (commentItem) => {
   const list = document.createElement('li');
-  list.innerHTML = `<span class ="date">${commentItem.creation_date} </span> <span class="name">${commentItem.username} </span> <span class="comment">${commentItem.comment}</span>`;
+  list.innerHTML = `<span class ="date">${commentItem.creation_date} </span> <span class="name">${commentItem.username}: </span> <span class="comment">${commentItem.comment}</span>`;
   return list;
 };
 
@@ -17,17 +17,15 @@ export const displayPopup = async (item, index) => {
           <div class="text">
             <p>Name: <span>${item.breeds[0].name}</span></p>
             <p>Bred for: <span>${item.breeds[0].bred_for}</span></p>
-            <p>Weight: <span>[${item.breeds[0].weight.metric}]</span></p>
             <p>Life span: <span>${item.breeds[0].life_span}</span></p>
-            <p>Size: <span>[${item.breeds[0].height.metric}]</span></p>
-            <p>Temperament: <span>${item.breeds[0].temperament}</span></p>
+             <p>Temperament: <span>${item.breeds[0].temperament}</span></p>
           </div>
           <div class="commentcontainer">
             <h3>Comments(<span id="comment-count">0</span>)</h3>
             <ul id="listcoment" class="listcoment"></ul>
             </div>
           <div class="d-comment">
-            <h4>Add a d-comment</h4>
+            <h4>Add A Comment</h4>
             <form id="form">
               <label for="name"></label>
               <input type="text" id="name" name="name" maxlength="30" placeholder="Name" required/>
