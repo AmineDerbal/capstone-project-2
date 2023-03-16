@@ -42,6 +42,7 @@
   },
   "homepage": "https://github.com/AmineDerbal/capstone-project-2#readme",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "axios": "^1.3.4"
   }
 }
