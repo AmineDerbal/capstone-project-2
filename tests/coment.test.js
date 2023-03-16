@@ -3,6 +3,7 @@
  */
 import { getApiComments } from '../src/modules/api.js';
 import { appendComment } from '../src/modules/popup.js';
+import getCommentCount from '../src/modules/commentCounter.js';
 
 const body = '<ul id="listcoment" class="listcoment"></ul>';
 
@@ -19,6 +20,6 @@ describe('Test if the comments are correctly retrieved from API', () => {
     data.forEach((comment) => {
       commentsList.appendChild(appendComment(comment));
     });
-    expect(document.querySelectorAll('li').length).toBe(data.length);
+    expect(getCommentCount()).toBe(data.length);
   });
 });
