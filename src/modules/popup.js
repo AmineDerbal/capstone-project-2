@@ -1,4 +1,5 @@
 import { getApiComments, postApiComment } from './api.js';
+import getCommentCount from './commentCounter.js';
 
 export const appendComment = (commentItem) => {
   const list = document.createElement('li');
@@ -52,7 +53,7 @@ export const displayPopup = async (item, index) => {
     comments.forEach((comment) => {
       commentsList.appendChild(appendComment(comment));
     });
-    document.getElementById('comment-count').textContent = comments.length;
+    document.getElementById('comment-count').textContent = getCommentCount();
   }
 
   const closeBtn = document.querySelector('.close-btn');
@@ -75,7 +76,7 @@ export const displayPopup = async (item, index) => {
       comments.forEach((comment) => {
         commentsList.appendChild(appendComment(comment));
       });
-      document.getElementById('comment-count').textContent = comments.length;
+      document.getElementById('comment-count').textContent = getCommentCount();
     }
   });
 };
