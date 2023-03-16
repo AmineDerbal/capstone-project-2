@@ -32,15 +32,12 @@ const displayItems = async (itemslist) => {
     });
     const likeButton = document.querySelector(`.item[data-index="${index}"] .like-icon`);
     likeButton.addEventListener('click', async (e) => {
-      e.target.style.animation = 'rubberBand 2s';
-      e.target.style.background = 'pink';
+      e.target.style.animation = 'rubberBand 1.5s';
       await sendALike(index);
       const data = await getAllLikesData();
       const itemIndex = await data.filter((item) => item.item_id === index);
+      e.target.style.animation = '';
       getNumberOfLikes(itemIndex[0]);
-      setTimeout((e) => {
-        e.target.style.animation = '';
-      }, 2000);
     });
   });
   const numberofLikesData = await sortLike();
