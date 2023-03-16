@@ -5,6 +5,7 @@ import amineGithubSrc from './image/git-github-hub-icon-25.png';
 import queenGithubSrc from './image/github-mark.png';
 import { getApiItems } from './modules/api.js';
 import displayItems from './modules/display.js';
+import getItemsCount from './modules/itemCounter.js';
 
 const loadGithubIcons = () => {
   const amineGithub = document.querySelector('.amine-github');
@@ -17,7 +18,6 @@ const loadLogo = () => {
   logoImage.src = logoSrc;
 };
 
-const getItemsCount = () => document.querySelectorAll('.item').length;
 window.onload = async () => {
   loadLogo();
   loadGithubIcons();
@@ -26,3 +26,5 @@ window.onload = async () => {
   const itemsCounter = document.getElementById('item-counters');
   itemsCounter.innerHTML = `(${getItemsCount()}) Breeds of dog`;
 };
+
+export default getItemsCount;
