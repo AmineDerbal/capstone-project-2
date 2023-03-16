@@ -1,4 +1,4 @@
-import likeSrc from '../image/like-icon.png';
+import likeSrc from '../image/hearts-icons-vectors-illustrations.png';
 import { getAllLikesData, sendALike } from './api.js';
 import { displayPopup } from './popup.js';
 
@@ -19,14 +19,13 @@ const displayItems = async (itemslist) => {
     const itemElement = document.createElement('div');
     itemElement.className = 'item';
     itemElement.setAttribute('data-index', index);
-    itemElement.innerHTML = `<img class="item-img" src=${item.url} alt=${item.breeds[0].name} /> <div class="item-description"><p>${item.breeds[0].name}</p><div><img class="like-icon" src=${likeSrc} alt="like" /> <p> <span class ="number-likes" >0</span> likes </p></div> </div><button class="comment-button">comment</button>`;
+    itemElement.innerHTML = `<img class="item-img" src=${item.url} alt=${item.breeds[0].name} /> <div class="item-description"><p>${item.breeds[0].name}</p><div class="like-container"><img class="like-icon" src=${likeSrc} alt="like" /> <p> <span class ="number-likes" >0</span> likes </p></div> </div><button class="comment-button">Comment</button>`;
     itemsContainer.appendChild(itemElement);
     if (index % 2 === 0) {
       itemElement.style.animation = 'backInLeft 2s';
     } else {
       itemElement.style.animation = 'backInRight 2s';
     }
-
     const commentButton = document.querySelector(`.item[data-index="${index}"] .comment-button`);
     commentButton.addEventListener('click', () => {
       displayPopup(item, index);
